@@ -636,7 +636,7 @@
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Slideshow ──
-  const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll('.slide');
   const dots   = document.querySelectorAll('.dot');
   let current  = 0;
   let timer;
@@ -645,4 +645,16 @@
     slides[current].classList.remove('active');
     dots[current].classList.remove('active');
     current = (n + slides.length) % slides.length;
-    slides[c
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    clearInterval(timer);
+    timer = setInterval(next, 5000);
+  }
+
+  function next() { goToSlide(current + 1); }
+
+  timer = setInterval(next, 5000);
+</script>
+
+</body>
+</html>
