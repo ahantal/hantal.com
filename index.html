@@ -214,27 +214,27 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: var(--text);
-    line-height: 1.8;
+    line-height: 1.9;
   }
 
   .event-details .date-line {
     font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--navy);
     letter-spacing: 0.05em;
   }
 
   .event-details .time-line {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: var(--muted);
   }
 
   .rsvp-note {
     margin-top: 2rem;
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: var(--muted);
     letter-spacing: 0.03em;
   }
@@ -276,8 +276,8 @@
   }
 
   .card-body {
-    font-size: 1.05rem;
-    line-height: 1.75;
+    font-size: 1.3rem;
+    line-height: 1.85;
     color: var(--text);
   }
 
@@ -292,7 +292,7 @@
 
   .schedule-time {
     font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
+    font-size: 1.05rem;
     color: var(--gold);
     white-space: nowrap;
     padding-top: 0.15rem;
@@ -300,7 +300,7 @@
   }
 
   .schedule-event {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     color: var(--text);
   }
@@ -315,7 +315,7 @@
     font-weight: 500;
     color: var(--navy);
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-bottom: 0.1rem;
@@ -345,14 +345,14 @@
   /* Hotels list */
   .hotel-item {
     margin-bottom: 0.7rem;
-    font-size: 0.98rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.6;
     padding-left: 1rem;
     border-left: 2px solid var(--gold);
   }
 
   .hotel-dist {
-    font-size: 0.82rem;
+    font-size: 1.0rem;
     color: var(--muted);
   }
 
@@ -395,6 +395,7 @@
 
   .rsvp-section .invite-label {
     color: var(--gold);
+    font-size: 1.1rem;
   }
 
   .rsvp-section .invite-heading {
@@ -403,7 +404,7 @@
   }
 
   .rsvp-deadline {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     color: rgba(255,255,255,0.65);
     margin-bottom: 2.5rem;
     letter-spacing: 0.03em;
@@ -450,7 +451,6 @@
 
 <!-- INVITATION -->
 <section class="invite-section">
-  <p class="invite-label">A Celebration of Service</p>
   <h2 class="invite-heading">You Are Invited!</h2>
 
   <div class="event-details">
@@ -487,18 +487,9 @@
     <div class="card-icon">👔</div>
     <div class="card-title">Dress Code</div>
     <div class="card-body">
-      <div class="dress-item">
-        <span class="dress-label">Official Party</span>
-        Service Dress White
-      </div>
-      <div class="dress-item">
-        <span class="dress-label">Military Guests</span>
-        Uniform of the Day or Coastal Chic
-      </div>
-      <div class="dress-item">
-        <span class="dress-label">Civilian Guests</span>
-        Business Casual or Coastal Chic
-      </div>
+      <div class="dress-item"><strong>Official Party</strong> — Service Dress White</div>
+      <div class="dress-item"><strong>Military Guests</strong> — Uniform of the Day or Coastal Chic</div>
+      <div class="dress-item"><strong>Civilian Guests</strong> — Business Casual or Coastal Chic</div>
     </div>
   </div>
 
@@ -510,7 +501,7 @@
       <p><strong>American Legion Post 176</strong></p>
       <p>6520 Amherst Ave</p>
       <p>Springfield, VA 22150</p>
-      <p style="color:var(--muted); font-size:0.95rem; margin-top:0.3rem;">Banquet Hall</p>
+      <p style="color:var(--muted); font-size:1.1rem; margin-top:0.3rem;">Banquet Hall</p>
       <a class="map-link"
          href="https://www.google.com/maps/place/American+Legion+Post+176/@38.7770403,-77.1857482,17z"
          target="_blank" rel="noopener">
@@ -524,7 +515,8 @@
     <div class="card-icon">🅿️</div>
     <div class="card-title">Parking</div>
     <div class="card-body">
-      <p>Free on-site parking is available, as well as a nearby covered garage.</p>
+      <p>Free on-site parking is available.</p>
+      <p style="margin-top:0.5rem;">Additional parking at the adjacent Springfield Business District Parking Garage.</p>
     </div>
   </div>
 
@@ -533,7 +525,7 @@
     <div class="card-icon">🏨</div>
     <div class="card-title">Nearby Hotels</div>
     <div class="card-body">
-      <p style="margin-bottom:1rem; color:var(--muted); font-size:0.95rem;">For your convenience, the following hotels are located near the venue:</p>
+      <p style="margin-bottom:1rem; color:var(--muted); font-size:1.1rem;">For your convenience, the following hotels are located near the venue:</p>
       <div class="hotel-item">
         <strong>Homewood Suites by Hilton Springfield</strong>
         <span class="hotel-dist">approx. 0.3 miles</span>
@@ -554,7 +546,7 @@
     <div class="card-icon">✈️</div>
     <div class="card-title">Nearby Airports</div>
     <div class="card-body">
-      <p style="margin-bottom:1rem; color:var(--muted); font-size:0.95rem;">For guests traveling from out of town, the nearest airports are:</p>
+      <p style="margin-bottom:1rem; color:var(--muted); font-size:1.1rem;">For guests traveling from out of town, the nearest airports are:</p>
       <div class="hotel-item">
         <strong>Ronald Reagan Washington National Airport (DCA)</strong>
         <span class="hotel-dist">approx. 11 miles from the venue</span>
