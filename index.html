@@ -268,8 +268,9 @@
 
   .card-title {
     font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1rem;
@@ -622,7 +623,7 @@
     <div class="poc">
       <p class="poc-label">Point of Contact</p>
       <p class="poc-name">LT Harry Hoffman</p>
-      <a class="poc-email" href="mailto:harry.a.hoffman@uscg.mil">harry.a.hoffman@uscg.mil</a>
+      <a class="poc-email" href="/cdn-cgi/l/email-protection#442c2536363d6a256a2c2b222229252a04313727236a292d28"><span class="__cf_email__" data-cfemail="4820293a3a3166296620272e2e252926083d3b2b2f66252124">[email&#160;protected]</span></a>
     </div>
   </div>
 </section>
@@ -633,7 +634,7 @@
   Retirement Ceremony · June 5, 2026 · Springfield, Virginia
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Slideshow ──
   const slides = document.querySelectorAll('.slide');
   const dots   = document.querySelectorAll('.dot');
@@ -644,16 +645,4 @@
     slides[current].classList.remove('active');
     dots[current].classList.remove('active');
     current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    clearInterval(timer);
-    timer = setInterval(next, 5000);
-  }
-
-  function next() { goToSlide(current + 1); }
-
-  timer = setInterval(next, 5000);
-</script>
-
-</body>
-</html>
+    slides[c
