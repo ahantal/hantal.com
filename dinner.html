@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CDR Karima Hantal — Dinner & Dance</title>
+<title>CDR Karima Hantal — Caribbean Beats & Eats</title>
 <link href="https://fonts.googleapis.com/css2?family=MV+Boli&family=Nunito:wght@300;400;600;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -80,7 +80,8 @@
 
   .hero-subtitle {
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 700;
     color: var(--white);
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -181,15 +182,18 @@
 
   .card-body {
     font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.85;
     color: var(--text);
   }
 
   .card-body p { margin-bottom: 0.4rem; }
+  .card-body, .card-body p, .card-body strong, .card-body a, .dress-item { font-family: 'Nunito', sans-serif !important; }
 
   .dress-item {
     margin-bottom: 0.6rem;
     font-size: 1.15rem;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.5;
   }
 
@@ -235,39 +239,6 @@
     border-top: 4px solid var(--gold);
   }
 
-  /* ── POC ── */
-  .poc {
-    text-align: center;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(201,168,76,0.3);
-  }
-
-  .poc-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-
-  .poc-name {
-    font-size: 1.2rem;
-    color: var(--white);
-    margin-bottom: 0.3rem;
-  }
-
-  .poc-email {
-    font-size: 1.1rem;
-    color: var(--gold-light);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(232,201,122,0.4);
-    transition: color 0.2s;
-  }
-
-  .poc-email:hover { color: var(--white); }
-
   /* ── FOOTER ── */
   footer {
     background: #071e30;
@@ -299,8 +270,8 @@
 <section class="hero">
   <div class="hero-content">
     <p class="hero-subtitle">CDR Karima Hantal</p>
-    <h1 class="hero-tagline">The Coast is Clear —<br>Now the Fun Starts Here!</h1>
-    <p class="hero-name">Dinner & Dance</p>
+    <h1 class="hero-tagline">The Coast is Clear —<br>The Fun Starts Here!</h1>
+    <p class="hero-name">Caribbean Beats &amp; Eats</p>
   </div>
 </section>
 
@@ -342,14 +313,14 @@
     <div class="card-icon">👗</div>
     <div class="card-title">Dress Code</div>
     <div class="card-body">
-      <div class="dress-item"><strong>Coastal Chic</strong> or <strong>Casual</strong></div>
-      <p style="margin-top:0.8rem; font-size:1rem; color:var(--muted);">Think breezy, tropical, and festive — dress to celebrate in style!</p>
+      <div class="dress-item">Coastal Chic or Casual</div>
+      <p style="margin-top:0.8rem;">Think breezy, tropical, and festive — dress to celebrate in style!</p>
     </div>
   </div>
 
   <div class="card">
     <div class="card-icon">🎶</div>
-    <div class="card-title">Entertainment</div>
+    <div class="card-title">Beats</div>
     <div class="card-body">
       <p>🎧 Live DJ spinning all night long</p>
       <p style="margin-top:0.6rem;">Get ready to dance the night away from 6:30 PM to Midnight!</p>
@@ -358,10 +329,9 @@
 
   <div class="card">
     <div class="card-icon">🍽️</div>
-    <div class="card-title">Catering</div>
+    <div class="card-title">Eats</div>
     <div class="card-body">
-      <p>Full catering service will be provided.</p>
-      <p style="margin-top:0.6rem;">Enjoy a wonderful evening of food, drinks, and great company!</p>
+      <p>Come ashore for Caribbean eats, tasty treats, and so much more!</p>
     </div>
   </div>
 
@@ -385,19 +355,13 @@
         Loading…
       </iframe>
     </div>
-    <div class="poc">
-      <p class="poc-label">Point of Contact</p>
-      <p class="poc-name">LT Harry Hoffman</p>
-      <a class="poc-email" id="poc-email-link" href="#"></a>
-      <script>var e="harry.a.hoffman";var d="uscg.mil";var el=document.getElementById("poc-email-link");el.href="mailto:"+e+"@"+d;el.textContent=e+"@"+d;</script>
-    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-name">CDR Karima Hantal</span>
-  Dinner & Dance · June 5, 2026 · Springfield, Virginia
+  Caribbean Beats &amp; Eats · June 5, 2026 · Springfield, Virginia
 </footer>
 
 </body>
