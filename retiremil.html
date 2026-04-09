@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RetireMil — Honor the Service. Share the Moment.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #162444;
+    --navy-light: #1e3560;
+    --red: #b91c1c;
+    --red-bright: #dc2626;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --white: #f8f6f0;
+    --white-pure: #ffffff;
+    --gray-light: #e8e4db;
+    --text-muted: #94a3b8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── STARS BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 15% 12%, rgba(255,255,255,.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 42% 8%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 68% 22%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 82% 6%, rgba(255,255,255,.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 28% 35%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 42%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 55%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 57% 48%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 74% 61%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 33% 72%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 78%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 12% 88%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 49% 92%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 96% 95%, rgba(255,255,255,.4) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(10,22,40,.95), transparent);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: .02em;
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white-pure);
+    padding: .5rem 1.25rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--red-bright); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 7rem 2rem 5rem;
+    z-index: 1;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.75rem;
+    opacity: 0;
+    animation: fadeUp .8s ease .2s forwards;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    color: var(--white-pure);
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp .9s ease .4s forwards;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    color: #b8c9e0;
+    max-width: 580px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp .9s ease .6s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp .9s ease .8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white-pure);
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: background .2s, transform .15s;
+  }
+  .btn-primary:hover { background: var(--red-bright); transform: translateY(-2px); }
+
+  .hero-note {
+    font-size: .8rem;
+    color: var(--text-muted);
+    letter-spacing: .04em;
+  }
+
+  /* ── RED WHITE BLUE STRIPE ── */
+  .stripe {
+    height: 5px;
+    background: linear-gradient(to right,
+      var(--red) 0%, var(--red) 33.3%,
+      var(--white-pure) 33.3%, var(--white-pure) 66.6%,
+      #1a3a6b 66.6%, #1a3a6b 100%);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: var(--navy-mid);
+  }
+
+  .section-label {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: #94a3b8;
+    max-width: 520px;
+    margin: 0 auto 4rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .step {
+    position: relative;
+    padding: 2rem 1.5rem;
+    border: .5px solid rgba(201,168,76,.25);
+    border-radius: 8px;
+    background: rgba(255,255,255,.03);
+    text-align: left;
+    transition: border-color .2s, background .2s;
+  }
+  .step:hover {
+    border-color: rgba(201,168,76,.5);
+    background: rgba(255,255,255,.05);
+  }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(201,168,76,.2);
+    line-height: 1;
+    margin-bottom: .75rem;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white-pure);
+    margin-bottom: .5rem;
+    letter-spacing: .02em;
+  }
+
+  .step p {
+    font-size: .9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+
+  /* ── WHAT'S INCLUDED ── */
+  .included {
+    padding: 6rem 2rem;
+    background: var(--navy);
+  }
+
+  .included-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .included-text { }
+
+  .included-text .section-title { text-align: left; }
+  .included-text .section-label { text-align: left; }
+  .included-text .section-sub { text-align: left; margin: 0 0 2rem; }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    font-size: .95rem;
+    color: #b8c9e0;
+  }
+
+  .feature-list li::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin-top: 3px;
+    background: var(--gold);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  .page-preview {
+    background: var(--navy-light);
+    border: .5px solid rgba(201,168,76,.3);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .preview-bar {
+    background: rgba(255,255,255,.05);
+    padding: .6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border-bottom: .5px solid rgba(255,255,255,.08);
+  }
+
+  .preview-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .preview-dot:nth-child(1) { background: #ef4444; }
+  .preview-dot:nth-child(2) { background: #f59e0b; }
+  .preview-dot:nth-child(3) { background: #22c55e; }
+
+  .preview-url {
+    flex: 1;
+    background: rgba(255,255,255,.08);
+    border-radius: 4px;
+    padding: .25rem .75rem;
+    font-size: .72rem;
+    color: #94a3b8;
+    font-family: monospace;
+  }
+
+  .preview-body { padding: 1.25rem; }
+
+  .preview-hero-img {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, #1e3560, #0a1628);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview-hero-img svg { opacity: .3; }
+
+  .preview-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: .25rem;
+  }
+
+  .preview-rank {
+    font-size: .72rem;
+    color: var(--gold);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .preview-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+
+  .preview-tag {
+    font-size: .65rem;
+    padding: .2rem .6rem;
+    border-radius: 4px;
+    border: .5px solid rgba(201,168,76,.3);
+    color: #94a3b8;
+    letter-spacing: .04em;
+  }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    padding: 5rem 2rem;
+    background: var(--red);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '"';
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 18rem;
+    color: rgba(255,255,255,.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--white-pure);
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.35;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-attr {
+    font-size: .85rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    padding: 6rem 2rem;
+    background: var(--navy-mid);
+    text-align: center;
+  }
+
+  .form-section .section-title { margin-bottom: .75rem; }
+  .form-section .section-sub { margin-bottom: 3rem; }
+
+  .form-container {
+    max-width: 540px;
+    margin: 0 auto;
+    background: rgba(255,255,255,.04);
+    border: .5px solid rgba(201,168,76,.25);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+  }
+
+  .form-container iframe {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    min-height: 1322px;
+  }
+
+  .form-placeholder {
+    padding: 3rem 1.5rem;
+    border: 1px dashed rgba(201,168,76,.3);
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: .9rem;
+    line-height: 1.8;
+  }
+
+  .form-placeholder strong {
+    display: block;
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    letter-spacing: .04em;
+  }
+
+  .form-placeholder code {
+    display: inline-block;
+    background: rgba(255,255,255,.08);
+    padding: .2rem .5rem;
+    border-radius: 4px;
+    font-size: .8rem;
+    color: #b8c9e0;
+    margin-top: .75rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 2rem;
+    background: var(--navy);
+    border-top: .5px solid rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+  .footer-logo span { color: var(--gold); }
+
+  .footer-note {
+    font-size: .8rem;
+    color: var(--text-muted);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .included-inner { grid-template-columns: 1fr; }
+    .page-preview { display: none; }
+    nav { padding: 1rem 1.25rem; }
+    .hero h1 { font-size: 2.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Retire<span>Mil</span></div>
+  <a href="#notify" class="nav-cta">Get Early Access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Coming Soon &mdash; Honoring Those Who Served</div>
+  <h1>Honor the Service.<br><em>Share the Moment.</em></h1>
+  <p class="hero-sub">The first AI-powered platform built exclusively for military retirement ceremonies. Create a beautiful, personalized ceremony page in minutes — and share it with every guest who deserves to be there.</p>
+  <div class="hero-actions">
+    <a href="#notify" class="btn-primary">Get Notified at Launch</a>
+    <span class="hero-note">Free to join &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Launching soon</span>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <p class="section-label reveal">How it works</p>
+  <h2 class="section-title reveal">From answers to ceremony page<br>in under 5 minutes</h2>
+  <p class="section-sub reveal">No design skills needed. No templates to wrestle with. Just answer a few questions and let the AI do the rest.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Fill out the form</h3>
+      <p>Enter the retiree's name, branch, rank, years of service, and key highlights from their career.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <h3>Upload photos</h3>
+      <p>Add up to 3 photos — a hero portrait, a career shot, or a family favorite. We handle the rest.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <h3>Choose your sections</h3>
+      <p>Toggle on schedule, venue, dress code, hotel info, gift section, and more. Pick what fits your ceremony.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <h3>Share your page</h3>
+      <p>Get a unique link at retiremil.com/ceremony/[name] to share with family, friends, and fellow service members.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+  <div class="included-inner">
+    <div class="included-text">
+      <p class="section-label reveal">Everything you need</p>
+      <h2 class="section-title reveal">Every section a ceremony deserves</h2>
+      <p class="section-sub reveal">Inspired by real military retirement pages. Built with veterans and military families in mind.</p>
+      <ul class="feature-list reveal">
+        <li>Hero cover with photo &amp; service details</li>
+        <li>Schedule of events with times</li>
+        <li>Venue, address &amp; Google Maps link</li>
+        <li>Dress code for all guest types</li>
+        <li>Parking &amp; nearby hotels info</li>
+        <li>Nearby airports for out-of-town guests</li>
+        <li>AI-written retiree biography</li>
+        <li>Gift &amp; contributions section (Venmo, Zelle, etc.)</li>
+        <li>Photo gallery</li>
+        <li>3 fully customizable extra sections</li>
+      </ul>
+    </div>
+    <div class="page-preview reveal">
+      <div class="preview-bar">
+        <div class="preview-dot"></div>
+        <div class="preview-dot"></div>
+        <div class="preview-dot"></div>
+        <div class="preview-url">retiremil.com/ceremony/james-mitchell</div>
+      </div>
+      <div class="preview-body">
+        <div class="preview-hero-img">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <div class="preview-rank">Master Sergeant &nbsp;·&nbsp; U.S. Army</div>
+        <div class="preview-name">James R. Mitchell</div>
+        <div class="preview-rank" style="margin-bottom:1.25rem">22 Years of Honorable Service</div>
+        <div class="preview-tags">
+          <span class="preview-tag">Schedule</span>
+          <span class="preview-tag">Venue</span>
+          <span class="preview-tag">Dress code</span>
+          <span class="preview-tag">Hotels</span>
+          <span class="preview-tag">Airports</span>
+          <span class="preview-tag">Biography</span>
+          <span class="preview-tag">Gift fund</span>
+          <span class="preview-tag">Gallery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <p class="quote-text">"20 years of service deserves more than a flyer. It deserves a page that family and friends can visit, save, and remember forever."</p>
+  <p class="quote-attr">The mission behind RetireMil</p>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="notify">
+  <p class="section-label reveal">Be the first to know</p>
+  <h2 class="section-title reveal">We're launching soon</h2>
+  <p class="section-sub reveal">Fill out the form below and we'll reach out the moment RetireMil goes live. Early subscribers get priority access and a special launch discount.</p>
+
+  <div class="form-container reveal">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf7WBuT-4LS01qqnUj-zA4qo7FAU0iCObWpnY38Q49F3516LQ/viewform?embedded=true" width="100%" height="1322" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Retire<span>Mil</span></div>
+  <p class="footer-note">Honoring every branch. Every rank. Every sacrifice. &nbsp;·&nbsp; retiremil.com</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
