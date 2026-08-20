@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Hantal Advising</title>
+<meta name="description" content="Start a conversation with Hantal Advising — U.S. market entry, AI and spatial computing strategy, EdTech, and executive advisory.">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <a class="brand" href="index.html">
+      <img src="assets/icon.png" alt="Hantal Advising icon">
+      <span>Hantal Advising</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="insights.html">Talks &amp; Insights</a>
+      <a href="contact.html" class="current">Contact</a>
+      <a class="cta" href="contact.html">Book an intro call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom:20px;">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's start a conversation</h1>
+      <p class="lede">Tell us what you're facing — U.S. market entry, an AI or spatial-computing roadmap, a raise, or something else entirely. The first conversation is free and unscripted.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div>
+          <form class="contact-form" style="position:relative;">
+            <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off">
+
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+              <label for="org">Organization</label>
+              <input type="text" id="org" name="org">
+            </div>
+
+            <div>
+              <label for="looking-for">What are you looking for?</label>
+              <select id="looking-for" name="looking-for">
+                <option>U.S. soft landing &amp; representation</option>
+                <option>Start-up advising &amp; fundraising</option>
+                <option>AI &amp; spatial computing strategy</option>
+                <option>EdTech &amp; talent ecosystems</option>
+                <option>Executive &amp; board advisory</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-status" style="display:none;color:var(--ink-soft);font-size:0.9rem;margin-top:4px;"></p>
+          </form>
+          <div class="note-box">This form isn't wired to an inbox yet — connect it to a form service (Formspree / Netlify Forms / CMS-native) with spam protection before launch. See specs.md §5.</div>
+        </div>
+
+        <div class="contact-side">
+          <div class="item">
+            <div class="label">Email</div>
+            <a href="mailto:ali@hantal.com">ali@hantal.com</a>
+          </div>
+          <div class="item">
+            <div class="label">LinkedIn</div>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">linkedin.com/in/alihantal</a>
+          </div>
+          <div class="item">
+            <div class="label">Based between</div>
+            <p style="margin:0;">Washington, D.C. · St. Thomas (USVI) · Türkiye</p>
+          </div>
+          <div class="item">
+            <div class="label">Schedule directly</div>
+            <p style="margin:0 0 10px;">Prefer to pick a time yourself?</p>
+            <a class="btn btn-ghost" href="#" onclick="return false;">Book via Calendly (pending setup)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-foot">
+          <img src="assets/icon.png" alt="Hantal Advising icon">
+          <span>Hantal Advising</span>
+        </div>
+        <p style="max-width:340px;color:#8b98a4;">Strategic advisory for leaders navigating AI, spatial computing, and international growth. Based between Washington, D.C., St. Thomas (USVI), and Türkiye.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="insights.html">Talks &amp; Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:ali@hantal.com">ali@hantal.com</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Hantal Advising. All rights reserved.</span>
+      <span>hantal.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
