@@ -164,18 +164,21 @@ nav.primary a.cta:hover { background: var(--gold); color: var(--ink); }
 
 @media (max-width: 860px) {
   nav.primary {
+    display: none;
     position: fixed;
-    inset: 68px 0 0 0;
+    top: 68px;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
     background: var(--paper-raised);
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     padding: 12px 28px 28px;
-    transform: translateY(-110%);
-    transition: transform 0.25s ease;
     border-bottom: 1px solid var(--line);
   }
-  nav.primary.open { transform: translateY(0); }
+  nav.primary.open { display: flex; }
   nav.primary a { width: 100%; padding: 14px 0; border-bottom: 1px solid var(--line); }
   nav.primary a.cta { margin-top: 12px; text-align: center; }
   .nav-toggle { display: block; }
