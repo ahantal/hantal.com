@@ -19,7 +19,7 @@ then open `http://localhost:8000`.
 
 ## Deployment
 
-Served via GitHub Pages (`main` branch, root). `CNAME` points Pages at the custom domain `hantal.com` — the domain's DNS still needs to be pointed at GitHub Pages for that to resolve (see repo Settings → Pages).
+Served via GitHub Pages (`main` branch, root). `CNAME` points Pages at the custom domain `www.hantal.com` — the domain's DNS still needs to be pointed at GitHub Pages for that to resolve (see repo Settings → Pages).
 
 ## Known placeholders (not yet wired up)
 
