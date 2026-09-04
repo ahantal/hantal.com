@@ -33,17 +33,65 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Contact form (no backend wired yet — placeholder confirmation)
+  // Web3Forms submission handler, shared by the contact form and the newsletter form
+  async function handleWeb3FormSubmit(form, status, { successMessage, errorMessage, honeypotSelector }) {
+    if (honeypotSelector) {
+      const honeypot = form.querySelector(honeypotSelector);
+      if (honeypot && honeypot.value) return; // bot filled the hidden field — drop silently
+    }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn ? submitBtn.textContent : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+    }
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (status) {
+        status.style.display = "block";
+        status.textContent = data.success ? successMessage : errorMessage;
+      }
+      if (data.success) form.reset();
+    } catch (err) {
+      if (status) {
+        status.style.display = "block";
+        status.textContent = errorMessage;
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    }
+  }
+
+  // Contact form
   const form = document.querySelector("form.contact-form");
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (form.querySelector(".hp").value) return; // honeypot triggered, silently drop
-      const status = form.querySelector(".form-status");
-      if (status) {
-        status.textContent = "Thanks — this form isn't wired to an inbox yet. Please email ali@hantal.com directly for now.";
-        status.style.display = "block";
-      }
+      handleWeb3FormSubmit(form, form.querySelector(".form-status"), {
+        successMessage: "Thanks — your message has been sent. We'll be in touch soon.",
+        errorMessage: "Something went wrong sending your message — please email ali@hantal.com directly.",
+        honeypotSelector: ".hp",
+      });
+    });
+  }
+
+  // Talks & Insights newsletter signup
+  const newsletterForm = document.querySelector("form.newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      handleWeb3FormSubmit(newsletterForm, document.querySelector(".newsletter-status"), {
+        successMessage: "Thanks — you're on the list.",
+        errorMessage: "Something went wrong — please try again.",
+      });
     });
   }
 });
