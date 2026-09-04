@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       handleWeb3FormSubmit(newsletterForm, document.querySelector(".newsletter-status"), {
         successMessage: "Thanks — you're on the list.",
         errorMessage: "Something went wrong — please try again.",
+        honeypotSelector: ".hp",
       });
     });
   }

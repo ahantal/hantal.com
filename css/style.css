@@ -425,7 +425,7 @@ form.contact-form textarea {
   color: var(--text);
 }
 form.contact-form textarea { resize: vertical; min-height: 130px; }
-form.contact-form .hp { position: absolute; left: -9999px; }
+.hp { position: absolute; left: -9999px; }
 
 .contact-side .item { margin-bottom: 28px; }
 .contact-side .item .label {
@@ -488,13 +488,3 @@ footer.site .bottom {
 .divider { height: 1px; background: var(--line); border: none; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
-
-.note-box {
-  background: #f0e9d8;
-  border: 1px dashed var(--gold);
-  border-radius: 4px;
-  padding: 18px 22px;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  margin-top: 20px;
-}
