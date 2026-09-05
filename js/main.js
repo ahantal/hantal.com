@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function handleWeb3FormSubmit(form, status, { successMessage, errorMessage, honeypotSelector }) {
     if (honeypotSelector) {
       const honeypot = form.querySelector(honeypotSelector);
-      if (honeypot && honeypot.value) return; // bot filled the hidden field — drop silently
+      if (honeypot && honeypot.value) return; // bot filled the hidden field, drop silently
     }
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalLabel = submitBtn ? submitBtn.textContent : "";
@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       handleWeb3FormSubmit(form, form.querySelector(".form-status"), {
-        successMessage: "Thanks — your message has been sent. We'll be in touch soon.",
-        errorMessage: "Something went wrong sending your message — please email ali@hantal.com directly.",
+        successMessage: "Thanks, your message has been sent. We'll be in touch soon.",
+        errorMessage: "Something went wrong sending your message. Please email ali@hantal.com directly.",
         honeypotSelector: ".hp",
       });
     });
@@ -89,8 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
     newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault();
       handleWeb3FormSubmit(newsletterForm, document.querySelector(".newsletter-status"), {
-        successMessage: "Thanks — you're on the list.",
-        errorMessage: "Something went wrong — please try again.",
+        successMessage: "Thanks, you're on the list.",
+        errorMessage: "Something went wrong. Please try again.",
         honeypotSelector: ".hp",
       });
     });
