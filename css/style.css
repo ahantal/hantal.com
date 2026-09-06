@@ -513,8 +513,10 @@ footer.site .bottom {
 .video-frame {
   position: relative;
   width: 100%;
+  /* never taller than the viewport; stays a true 16:9 so YouTube never letterboxes */
+  max-width: calc(82vh * 16 / 9);
+  margin-inline: auto;
   aspect-ratio: 16 / 9;
-  max-height: 80vh;
   overflow: hidden;
   background: #000;
 }
